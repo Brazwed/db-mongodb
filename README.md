@@ -1,8 +1,8 @@
 # db-mongodb
 
-MongoDB 7 Docker container pré-configurado. Pronto pra usar, com autenticação.
+MongoDB 7 Docker container pre-configured. Ready to use, with authentication.
 
-## Uso rápido
+## Quick Start
 
 ```bash
 git clone https://github.com/Brazwed/db-mongodb.git
@@ -10,20 +10,20 @@ cd db-mongodb
 docker compose up -d
 ```
 
-## Conexão padrão
+## Default Connection
 
 ```
 Host:     localhost
-Porta:    27017
-Usuário:  mongodb_user
-Senha:    mongodb_dev_2026
+Port:     27017
+User:     mongodb_user
+Pass:     mongodb_dev_2026
 
 mongosh mongodb://mongodb_user:mongodb_dev_2026@localhost:27017/devdb
 ```
 
-## Configuração
+## Configuration
 
-Edite `.env` (criado automaticamente de `.env.example`):
+Edit `.env` (created automatically from `.env.example`):
 
 ```env
 MO_PORT=27017
@@ -32,6 +32,6 @@ MO_PASS=mongodb_dev_2026
 MO_DB=devdb
 ```
 
-## Parte do Database Toolkit
+## Part of Database Toolkit
 
-Este repositório pode ser usado standalone ou junto com outros bancos via [Database](https://github.com/Brazwed/Database).
+This repo can be used standalone or with other databases via [Database Toolkit](https://github.com/Brazwed/Database).
