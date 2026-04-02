@@ -1,12 +1,21 @@
 # db-mongodb
 
-MongoDB 7 Docker container pre-configured. Ready to use, with authentication.
+MongoDB 7 Docker container pre-configured. With authentication.
 
-## Quick Start
+## Option 1: Use with Database Toolkit (Recommended)
+
+```bash
+git clone --recurse-submodules https://github.com/Brazwed/Database.git
+cd Database
+sudo ./setup.sh install mongodb
+```
+
+## Option 2: Standalone with Docker Compose
 
 ```bash
 git clone https://github.com/Brazwed/db-mongodb.git
 cd db-mongodb
+cp .env.example .env
 docker compose up -d
 ```
 
@@ -23,7 +32,7 @@ mongosh mongodb://mongodb_user:mongodb_dev_2026@localhost:27017/devdb
 
 ## Configuration
 
-Edit `.env` (created automatically from `.env.example`):
+Edit `.env`:
 
 ```env
 MO_PORT=27017
@@ -34,4 +43,4 @@ MO_DB=devdb
 
 ## Part of Database Toolkit
 
-This repo can be used standalone or with other databases via [Database Toolkit](https://github.com/Brazwed/Database).
+https://github.com/Brazwed/Database
