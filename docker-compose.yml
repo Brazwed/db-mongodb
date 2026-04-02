@@ -1,0 +1,17 @@
+services:
+  mongodb:
+    image: mongo:7
+    container_name: mongodb_${COMPOSE_PROJECT_NAME:-default}
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MO_PASS}
+    ports:
+      - "${MO_PORT}:27017"
+    volumes:
+      - ./data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')", "-u", "${MO_USER}", "-p", "${MO_PASS}", "--authenticationDatabase", "admin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
