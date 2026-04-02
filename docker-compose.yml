@@ -11,7 +11,7 @@ services:
     volumes:
       - ./data:/data/db
     healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')", "-u", "${MO_USER}", "-p", "${MO_PASS}", "--authenticationDatabase", "admin"]
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
       interval: 10s
       timeout: 5s
       retries: 5
